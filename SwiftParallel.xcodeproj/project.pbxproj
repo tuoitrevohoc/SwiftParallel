@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3673456E1D8FC8DF00EB8621 /* PromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673456D1D8FC8DF00EB8621 /* PromiseTests.swift */; };
 		36AE122F1D8F60B600B91404 /* SwiftParallel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AE12251D8F60B600B91404 /* SwiftParallel.framework */; };
-		36AE12341D8F60B600B91404 /* SwiftParallelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE12331D8F60B600B91404 /* SwiftParallelTests.swift */; };
 		36AE12361D8F60B600B91404 /* SwiftParallel.h in Headers */ = {isa = PBXBuildFile; fileRef = 36AE12281D8F60B600B91404 /* SwiftParallel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36AE12401D8F60C300B91404 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE123F1D8F60C300B91404 /* Promise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +24,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3673456D1D8FC8DF00EB8621 /* PromiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseTests.swift; sourceTree = "<group>"; };
 		36AE12251D8F60B600B91404 /* SwiftParallel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftParallel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36AE12281D8F60B600B91404 /* SwiftParallel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftParallel.h; sourceTree = "<group>"; };
 		36AE12291D8F60B600B91404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36AE122E1D8F60B600B91404 /* SwiftParallelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftParallelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36AE12331D8F60B600B91404 /* SwiftParallelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftParallelTests.swift; sourceTree = "<group>"; };
 		36AE12351D8F60B600B91404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36AE123F1D8F60C300B91404 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		36AE12271D8F60B600B91404 /* SwiftParallel */ = {
 			isa = PBXGroup;
 			children = (
+				36AE123F1D8F60C300B91404 /* Promise.swift */,
 				36AE12281D8F60B600B91404 /* SwiftParallel.h */,
 				36AE12291D8F60B600B91404 /* Info.plist */,
 			);
@@ -80,8 +83,8 @@
 		36AE12321D8F60B600B91404 /* SwiftParallelTests */ = {
 			isa = PBXGroup;
 			children = (
-				36AE12331D8F60B600B91404 /* SwiftParallelTests.swift */,
 				36AE12351D8F60B600B91404 /* Info.plist */,
+				3673456D1D8FC8DF00EB8621 /* PromiseTests.swift */,
 			);
 			path = SwiftParallelTests;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 					36AE12241D8F60B600B91404 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = QL9Q47DN4Y;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					36AE122D1D8F60B600B91404 = {
@@ -198,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36AE12401D8F60C300B91404 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36AE12341D8F60B600B91404 /* SwiftParallelTests.swift in Sources */,
+				3673456E1D8FC8DF00EB8621 /* PromiseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +327,7 @@
 		36AE123A1D8F60B600B91404 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = QL9Q47DN4Y;
@@ -334,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.banhtieu.SwiftParallel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +348,7 @@
 		36AE123B1D8F60B600B91404 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = QL9Q47DN4Y;
@@ -360,6 +368,7 @@
 		36AE123D1D8F60B600B91404 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = QL9Q47DN4Y;
 				INFOPLIST_FILE = SwiftParallelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +381,7 @@
 		36AE123E1D8F60B600B91404 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = QL9Q47DN4Y;
 				INFOPLIST_FILE = SwiftParallelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -400,6 +410,7 @@
 				36AE123B1D8F60B600B91404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36AE123C1D8F60B600B91404 /* Build configuration list for PBXNativeTarget "SwiftParallelTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +419,7 @@
 				36AE123E1D8F60B600B91404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
