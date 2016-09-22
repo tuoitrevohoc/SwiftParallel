@@ -1,15 +1,16 @@
 //
-//  PromiseTests.swift
+//  AsyncTests.swift
 //  SwiftParallel
 //
-//  Created by Tran Thien Khiem on 9/19/16.
+//  Created by Tran Thien Khiem on 9/23/16.
 //  Copyright © 2016 Tran Thien Khiem. All rights reserved.
 //
 
 import XCTest
 import SwiftParallel
 
-class PromiseTests: XCTestCase {
+/// asynchronous tests
+class AsyncTests: XCTestCase {
     
     ///
     /// some basic error type
@@ -17,33 +18,29 @@ class PromiseTests: XCTestCase {
         case NotOK
     }
     
-    /// test creating a promise
-    func testPromiseAccept() {
+    /// hello world
+    func testCallingAsync() {
+        
         let resultReturned = expectation(description: "Promise should finished")
         
-        /// promise with handler
-        Promise<String>(handler: {
-            (accept, reject) in
-            accept("Hello")
-        }).then(callback: {
+        async {
+            return "Hello World"
+        }.then(callback: {
             data in
-            print("data")
-            
             resultReturned.fulfill()
         })
         
         waitForExpectations(timeout: 5.0, handler: nil)
     }
     
-    /// test creating a promise
-    func testPromiseError() {
+    /// test runing the close synchronously and throws error
+    func testCallingAsyncError() {
         let errorHappened = expectation(description: "Promise should fire errors")
         
         /// promise with handler
-        Promise<String>(handler: {
-            (accept, reject) in
-            reject(BasicError.NotOK)
-        }).then(callback: {
+        async {
+            throw BasicError.NotOK
+        }.then(callback: {
             data in
             print("data")
         }).onError(callback: {
@@ -54,6 +51,5 @@ class PromiseTests: XCTestCase {
         
         waitForExpectations(timeout: 5.0, handler: nil)
     }
-
     
 }
