@@ -3,6 +3,11 @@ A Tiny library for concurrency
 
 This is my promise. Usage:
 
+Add to project using Pod:
+```
+pod 'SwiftState', :git => 'https://github.com/tuoitrevohoc/SwiftState.git'
+```
+
 ```
 Promise<String>(handler: {
   (accept, reject) in
