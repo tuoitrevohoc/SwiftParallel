@@ -18,16 +18,16 @@ public class Promise<T> {
     typealias ErrorCallBack = ((Error) -> ())
     
     /// the dispatch queue
-    var workItem: DispatchWorkItem!
+    private var workItem: DispatchWorkItem!
     
     /// the callback function
-    var successCallback: SuccessCallBack?
+    private var successCallback: SuccessCallBack?
     
     /// error callback
-    var errorCallBack: ErrorCallBack?
+    private var errorCallBack: ErrorCallBack?
     
     /// the lock
-    var lock: NSLock?
+    private var lock: NSLock?
     
     /// get the result of the promise right await
     public var result: T? {
@@ -93,7 +93,5 @@ public class Promise<T> {
         
         return self
     }
-    
-    
 
 }
