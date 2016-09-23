@@ -40,7 +40,7 @@ Very useful in API implemenation:
 protocol UserService {
   
   ///
-  /// login with username and passwork
+  /// login with username and password
   ///
   /// - parameter username: username of the user
   /// - parameter password: password
