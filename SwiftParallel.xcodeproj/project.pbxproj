@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3611D8EC1D949CA200A34A13 /* Asynchronize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611D8EA1D949C9C00A34A13 /* Asynchronize.swift */; };
 		3611D8EE1D949DBB00A34A13 /* AsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611D8ED1D949DBB00A34A13 /* AsyncTests.swift */; };
+		3611D8F01D94C69A00A34A13 /* SwiftParallel.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3611D8EF1D94C69A00A34A13 /* SwiftParallel.podspec */; };
 		3673456E1D8FC8DF00EB8621 /* PromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673456D1D8FC8DF00EB8621 /* PromiseTests.swift */; };
 		36AE122F1D8F60B600B91404 /* SwiftParallel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AE12251D8F60B600B91404 /* SwiftParallel.framework */; };
 		36AE12361D8F60B600B91404 /* SwiftParallel.h in Headers */ = {isa = PBXBuildFile; fileRef = 36AE12281D8F60B600B91404 /* SwiftParallel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		3611D8EA1D949C9C00A34A13 /* Asynchronize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asynchronize.swift; sourceTree = "<group>"; };
 		3611D8ED1D949DBB00A34A13 /* AsyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTests.swift; sourceTree = "<group>"; };
+		3611D8EF1D94C69A00A34A13 /* SwiftParallel.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftParallel.podspec; sourceTree = "<group>"; };
 		3673456D1D8FC8DF00EB8621 /* PromiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseTests.swift; sourceTree = "<group>"; };
 		36AE12251D8F60B600B91404 /* SwiftParallel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftParallel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36AE12281D8F60B600B91404 /* SwiftParallel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftParallel.h; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				36AE12271D8F60B600B91404 /* SwiftParallel */,
 				36AE12321D8F60B600B91404 /* SwiftParallelTests */,
 				36AE12261D8F60B600B91404 /* Products */,
+				3611D8EF1D94C69A00A34A13 /* SwiftParallel.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3611D8F01D94C69A00A34A13 /* SwiftParallel.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
