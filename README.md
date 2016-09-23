@@ -5,7 +5,7 @@ This is my promise. Usage:
 
 Add to project using Pod:
 ```
-pod 'SwiftState', :git => 'https://github.com/tuoitrevohoc/SwiftState.git'
+pod 'SwiftParallel', :git => 'https://github.com/tuoitrevohoc/SwiftParallel.git'
 ```
 
 ```
