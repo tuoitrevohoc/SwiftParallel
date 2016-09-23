@@ -54,6 +54,18 @@ class PromiseTests: XCTestCase {
         
         waitForExpectations(timeout: 5.0, handler: nil)
     }
+    
+    /// test creating a promise
+    func testGetResult() {
+        
+        /// promise with handler
+        let result = Promise<String>(handler: {
+            (accept, reject) in
+            accept("Hello World!")
+        }).result
+        
+        XCTAssertEqual("Hello World!", result)
+    }
 
     
 }

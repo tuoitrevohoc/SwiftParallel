@@ -17,11 +17,34 @@ public class Promise<T> {
     /// the error callback
     typealias ErrorCallBack = ((Error) -> ())
     
+    /// the dispatch queue
+    var workItem: DispatchWorkItem!
+    
     /// the callback function
     var successCallback: SuccessCallBack?
     
     /// error callback
     var errorCallBack: ErrorCallBack?
+    
+    /// the lock
+    var lock: NSLock?
+    
+    /// get the result of the promise right await
+    public var result: T? {
+        var value: T?
+        
+        successCallback = {
+            data in
+            value = data
+            self.lock?.unlock()
+        }
+        
+        lock = NSLock()
+        lock?.lock()
+        lock?.lock()
+        
+        return value
+    }
     
     ///
     /// initialize the promise with a handler
@@ -29,7 +52,7 @@ public class Promise<T> {
     public init(handler: @escaping (SuccessCallBack, ErrorCallBack) -> Void) {
         
         /// set the handler
-        DispatchQueue.global(qos: .background).async {
+        workItem = DispatchWorkItem(flags: .assignCurrentContext) {
             handler({
                 data in
                 self.successCallback?(data)
@@ -39,6 +62,7 @@ public class Promise<T> {
             })
         }
         
+        DispatchQueue.global(qos: .background).async(execute: workItem)
         
     }
     
@@ -48,7 +72,9 @@ public class Promise<T> {
         
         successCallback = {
             data in
-            callback(data)
+            DispatchQueue.main.async {
+                callback(data)
+            }
         }
 
         return self
@@ -58,9 +84,16 @@ public class Promise<T> {
     /// - parameter callback: the error handler
     @discardableResult
     public func onError(callback: @escaping (Error) -> ()) -> Promise<T> {
-        errorCallBack = callback
+        errorCallBack = {
+            error in
+            DispatchQueue.main.async {
+                callback(error)
+            }
+        }
         
         return self
     }
+    
+    
 
 }
